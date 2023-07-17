@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    {% for item in content.blocks %}
+			{{ include('pages/blocks/' ~ item.type ~ '.html.twig', { content : item }) }}
+		{% endfor %} 
+{% endblock %}
+
+

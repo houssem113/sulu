@@ -1,0 +1,49 @@
+sulu_admin:
+    email: "%env(SULU_ADMIN_EMAIL)%"
+    forms:
+        directories:
+            - "%kernel.project_dir%/config/forms"
+    lists:
+        directories:
+            - "%kernel.project_dir%/config/lists"
+    resources:
+        equipement:
+            routes:
+                list: app.get_equipements
+                detail: app.get_equipement 
+    field_type_options:
+        selection:
+            multiple_equipements_selection:
+                default_type: 'list_overlay'
+                resource_key: 'equipement'
+                view:
+                    name: 'app.equipement_edit_form'
+                    result_to_view:
+                        id: 'id'
+                types:
+                    list_overlay:
+                        adapter: 'table'
+                        list_key: 'equipement'
+                        display_properties:
+                            - 'title'
+                        icon: 'su-search'
+                        label: 'app.equipement'
+                        overlay_title: 'app.equipement'
+        single_selection:
+            single_equipement_selection:
+                default_type: 'list_overlay'
+                resource_key: 'equipement'
+                view:
+                    name: 'app.equipement_edit_form'
+                    result_to_view:
+                        id: 'id'
+                types:
+                    list_overlay:
+                        adapter: 'table'
+                        list_key: 'equipement'
+                        display_properties:
+                            - 'title'
+                        icon: 'su-search'
+                        empty_text: 'app.location.no_selections'
+                        overlay_title: 'app.equipement'
+            

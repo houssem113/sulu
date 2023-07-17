@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<list xmlns="http://schemas.sulu.io/list-builder/list">
+    <key>equipement</key>
+
+    <joins name="translation">
+        <join>
+            <entity-name>App\Entity\EquipementTranslation</entity-name>
+            <field-name>App\Entity\Equipement.translations</field-name>
+            <condition>App\Entity\EquipementTranslation.locale = :locale</condition>
+        </join>
+    </joins>
+
+    <properties>
+        <property name="id" visibility="no" translation="sulu_admin.id">
+            <field-name>id</field-name>
+            <entity-name>App\Entity\Equipement</entity-name>
+        </property>
+
+        <property name="title" visibility="always" searchability="yes" translation="sulu_admin.title">
+            <field-name>title</field-name>
+            <entity-name>App\Entity\EquipementTranslation</entity-name>
+
+            <joins ref="translation"/>
+        </property>
+
+        <property name="description" searchability="yes" translation="sulu_admin.description">
+            <field-name>description</field-name>
+            <entity-name>App\Entity\EquipementTranslation</entity-name>
+
+            <joins ref="translation"/>
+        </property>
+    </properties>
+</list>

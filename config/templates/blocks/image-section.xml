@@ -1,0 +1,32 @@
+<properties xmlns="http://schemas.sulu.io/template/template"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/template-1.0.xsd">
+    <block name="blocks" default-type="image-section">
+        <!-- @see https://docs.sulu.io/en/2.2/reference/content-types/block.html -->
+
+        <types>
+            <type name="image-section">
+                <meta>
+                    <title>image.section</title>
+                </meta>
+                <properties> 
+                    <property name="subtitle" type="text_line">
+                        <meta>
+                            <title>SubTitle</title>
+                        </meta>
+                    </property>
+                    <property name="title" type="text_line">
+                        <meta>
+                            <title>Title</title>
+                        </meta>
+                    </property>
+                    <property name="item_image" type="single_media_selection">
+                        <meta>
+                            <title>Image</title>
+                        </meta>
+                    </property>
+                </properties>
+            </type>
+        </types>
+    </block>
+</properties>

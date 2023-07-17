@@ -1,0 +1,11 @@
+# Define your admin routes here
+controllers:
+    resource: ../src/Controller/Admin/
+    type: attribute
+app_equipement:
+    type: rest
+    resource: App\Controller\Admin\EquipementController
+    prefix: /admin/api
+    name_prefix: app.
+    options:
+        expose: true
